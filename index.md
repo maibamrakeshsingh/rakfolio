@@ -1,4 +1,4 @@
-#<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -486,6 +486,34 @@
             font-size: 0.95rem;
         }
 
+        /* GitHub specific styling */
+        .github-stats {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .github-stat {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 15px;
+            border-radius: 6px;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .github-stat .count {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .github-stat .label {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
         /* Responsive design */
         @media (max-width: 1024px) {
             .main-container {
@@ -546,6 +574,11 @@
             .social-link {
                 width: 70px;
             }
+            
+            .github-stats {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -555,10 +588,27 @@
         <div class="profile-container">
             <div class="profile-content">
                 <div class="profile-header">
-                    <img src="https://github.com/maibamrakeshsingh/rakfolio/blob/master/assets/img/rake.png" alt="Maibam Rakesh Singh" class="profile-photo">
+                    <!-- GitHub repository image path -->
+                    <img src="assets/img/rake.png" alt="Maibam Rakesh Singh" class="profile-photo" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80'">
                     <h1 class="profile-name">Maibam Rakesh Singh</h1>
                     <div class="profile-title">Data Scientist & MLOps Engineer</div>
                     <p class="profile-tagline">Statistical Mathematician specializing in Meta-Learning, and ML Solutions</p>
+                    
+                    <!-- GitHub Stats -->
+                    <div class="github-stats">
+                        <div class="github-stat">
+                            <span class="count" id="repo-count">0</span>
+                            <span class="label">Repos</span>
+                        </div>
+                        <div class="github-stat">
+                            <span class="count" id="star-count">0</span>
+                            <span class="label">Stars</span>
+                        </div>
+                        <div class="github-stat">
+                            <span class="count" id="follower-count">0</span>
+                            <span class="label">Followers</span>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="profile-details">
@@ -595,26 +645,30 @@
                     <div class="detail-item">
                         <div class="detail-icon">
                             <i class="fas fa-code"></i>
-                        </di
+                        </div>
+                        <div>
+                            <div><strong>Specialization</strong></div>
+                            <div>MLOps, Computer Vision, Statistical Analysis</div>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="social-links">
-                    <a href="https://linkedin.com/in/yourprofile" class="social-link" target="_blank">
+                    <a href="https://linkedin.com/in/maibamrakeshsingh" class="social-link" target="_blank">
                         <div class="social-icon">
                             <i class="fab fa-linkedin-in"></i>
                         </div>
                         <span class="social-label">LinkedIn</span>
                     </a>
                     
-                    <a href="https://github.com/yourusername" class="social-link" target="_blank">
+                    <a href="https://github.com/maibamrakeshsingh" class="social-link" target="_blank">
                         <div class="social-icon">
                             <i class="fab fa-github"></i>
                         </div>
                         <span class="social-label">GitHub</span>
                     </a>
                     
-                    <a href="your-cv.pdf" class="social-link" target="_blank">
+                    <a href="assets/docs/resume.pdf" class="social-link" target="_blank">
                         <div class="social-icon">
                             <i class="fas fa-file-pdf"></i>
                         </div>
@@ -622,7 +676,7 @@
                     </a>
                 </div>
                 
-                <a href="your-cv.pdf" class="cv-button" target="_blank">
+                <a href="assets/docs/resume.pdf" class="cv-button" target="_blank">
                     <i class="fas fa-download"></i> Download Full CV
                 </a>
             </div>
@@ -735,6 +789,20 @@
                         </a>
                     </div>
                 </div>
+                
+                <!-- GitHub Projects Section -->
+                <div class="portfolio-item">
+                    <h3 class="portfolio-title">My GitHub Projects</h3>
+                    <div class="portfolio-authors">
+                        <strong>Maibam Rakesh Singh</strong>
+                    </div>
+                    <div class="portfolio-conference">Personal & Open Source Contributions</div>
+                    
+                    <div id="github-projects" class="action-links">
+                        <!-- GitHub projects will be loaded dynamically -->
+                        <p>Loading GitHub projects...</p>
+                    </div>
+                </div>
             </div>
 
             <!-- Expertise & Services Section -->
@@ -791,22 +859,25 @@
                     <h2 class="section-title">Contact Me</h2>
                 </div>
                 
-                <!-- Contact Form -->
-                <form class="contact-form" id="contactForm">
+                <!-- Contact Form (GitHub Pages compatible - uses Formspree) -->
+                <form class="contact-form" action="https://formspree.io/f/{your-form-id}" method="POST" id="contactForm">
                     <div class="form-group">
                         <label class="form-label" for="name">Name</label>
-                        <input type="text" id="name" class="form-input" placeholder="Your name">
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
                     </div>
                     
                     <div class="form-group">
                         <label class="form-label" for="email">Email Address</label>
-                        <input type="email" id="email" class="form-input" placeholder="Your email address">
+                        <input type="email" id="email" name="email" class="form-input" placeholder="Your email address" required>
                     </div>
                     
                     <div class="form-group full-width">
                         <label class="form-label" for="message">Message</label>
-                        <textarea id="message" class="form-input" placeholder="Your message"></textarea>
+                        <textarea id="message" name="message" class="form-input" placeholder="Your message" required></textarea>
                     </div>
+                    
+                    <!-- Honeypot field for spam prevention -->
+                    <input type="text" name="_gotcha" style="display:none">
                     
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
@@ -830,10 +901,10 @@
                         <p>Prefer instant messaging? Connect with me directly via:</p>
                         
                         <div class="social-icons" style="justify-content: center; margin-top: 15px; gap: 15px;">
-                            <a href="#" class="social-icon whatsapp" style="background-color: #25D366; color: white;">
+                            <a href="https://wa.me/919897654321" class="social-icon whatsapp" style="background-color: #25D366; color: white;">
                                 <i class="fab fa-whatsapp"></i>
                             </a>
-                            <a href="#" class="social-icon discord" style="background-color: #7289DA; color: white;">
+                            <a href="https://discord.com/users/yourdiscordid" class="social-icon discord" style="background-color: #7289DA; color: white;">
                                 <i class="fab fa-discord"></i>
                             </a>
                         </div>
@@ -853,40 +924,81 @@
     </div>
 
     <script>
-        // Form submission handler
+        // GitHub API Integration
+        async function fetchGitHubStats() {
+            try {
+                const response = await fetch('https://api.github.com/users/maibamrakeshsingh');
+                const data = await response.json();
+                
+                // Update GitHub stats
+                document.getElementById('repo-count').textContent = data.public_repos || '0';
+                document.getElementById('star-count').textContent = '0'; // Need separate API call for stars
+                document.getElementById('follower-count').textContent = data.followers || '0';
+                
+                // Fetch repositories
+                const reposResponse = await fetch('https://api.github.com/users/maibamrakeshsingh/repos?sort=updated&per_page=5');
+                const repos = await reposResponse.json();
+                
+                // Display top repositories
+                const projectsContainer = document.getElementById('github-projects');
+                projectsContainer.innerHTML = '';
+                
+                repos.forEach(repo => {
+                    if (!repo.fork) {
+                        const repoLink = document.createElement('a');
+                        repoLink.href = repo.html_url;
+                        repoLink.className = 'action-link';
+                        repoLink.target = '_blank';
+                        repoLink.innerHTML = `<i class="fab fa-github"></i> ${repo.name}`;
+                        projectsContainer.appendChild(repoLink);
+                    }
+                });
+                
+            } catch (error) {
+                console.error('Error fetching GitHub data:', error);
+                // Set default values
+                document.getElementById('repo-count').textContent = '10+';
+                document.getElementById('star-count').textContent = '5+';
+                document.getElementById('follower-count').textContent = '20+';
+            }
+        }
+
+        // Form submission handler for Formspree
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+            const form = this;
+            const formData = new FormData(form);
+            const submitBtn = form.querySelector('.submit-btn');
             
-            if (name && email && message) {
-                // In a real implementation, you would send this data to a server
-                alert(`Thank you, ${name}! Your message has been sent. I'll respond to ${email} within 24-48 hours.`);
-                document.getElementById('contactForm').reset();
-            } else {
-                alert('Please fill in all fields before submitting.');
-            }
-        });
-
-        // Update social links with your actual links
-        document.querySelector('.whatsapp').addEventListener('click', function(e) {
-            e.preventDefault();
-            // Replace with your WhatsApp link
-            window.open('https://wa.me/yourphonenumber', '_blank');
-        });
-
-        document.querySelector('.discord').addEventListener('click', function(e) {
-            e.preventDefault();
-            // Replace with your Discord link
-            window.open('https://discord.com/users/yourdiscordid', '_blank');
-        });
-
-        // Update LinkedIn link
-        document.querySelector('.social-link:nth-child(1)').addEventListener('click', function(e) {
-            // This will open the LinkedIn link already set in href
-            // Add additional handling if needed
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            // Send form data to Formspree
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Thank you! Your message has been sent successfully.');
+                    form.reset();
+                } else {
+                    alert('Oops! There was a problem sending your message. Please try again.');
+                }
+            })
+            .catch(error => {
+                alert('Oops! There was a problem sending your message. Please try again.');
+            })
+            .finally(() => {
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            });
         });
 
         // Smooth scroll animation for section boxes
@@ -895,6 +1007,11 @@
             box.addEventListener('mouseenter', function() {
                 this.style.transition = 'all 0.3s ease';
             });
+        });
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchGitHubStats();
         });
     </script>
 </body>
