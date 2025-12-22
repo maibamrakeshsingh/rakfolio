@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+#<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,12 +33,153 @@
             margin: 0 auto;
         }
 
+        .main-container {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 30px;
+        }
+
         .container {
             background-color: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             padding: 40px;
             margin-top: 20px;
+        }
+
+        /* Profile Section */
+        .profile-container {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px 25px;
+            margin-top: 20px;
+            color: white;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            object-fit: cover;
+            margin: 0 auto 20px;
+            display: block;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .profile-title {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 15px;
+        }
+
+        .profile-tagline {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+
+        .profile-details {
+            margin: 25px 0;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .detail-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            transition: var(--transition);
+            width: 80px;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+            transition: var(--transition);
+        }
+
+        .social-link:hover .social-icon {
+            background-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px);
+        }
+
+        .social-label {
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        .cv-button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            border-radius: 6px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: var(--transition);
+        }
+
+        .cv-button:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
         }
 
         /* Section boxes with colored backgrounds */
@@ -345,47 +486,31 @@
             font-size: 0.95rem;
         }
 
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .social-icon {
-            width: 50px;
-            height: 50px;
-            background-color: var(--light-bg);
-            color: var(--primary-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .social-icon:hover {
-            transform: translateY(-5px);
-            color: white;
-        }
-
-        .whatsapp:hover {
-            background-color: #25D366;
-        }
-
-        .discord:hover {
-            background-color: #7289DA;
-        }
-
-        .email:hover {
-            background-color: #EA4335;
-        }
-
         /* Responsive design */
+        @media (max-width: 1024px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-container {
+                position: static;
+                margin-bottom: 30px;
+            }
+            
+            .profile-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .profile-details {
+                width: 100%;
+                max-width: 500px;
+            }
+        }
+
         @media (max-width: 768px) {
-            .container {
+            .container, .profile-container {
                 padding: 25px;
             }
             
@@ -408,227 +533,324 @@
             .interests-list, .expertise-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .social-links {
+                gap: 10px;
+            }
+            
+            .social-link {
+                width: 70px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Research Interests Section -->
-        <div class="section-box research-box">
-            <div class="section-header">
-                <div class="section-icon">
-                    <i class="fas fa-search"></i>
-                </div>
-                <h2 class="section-title">Research Interests</h2>
-            </div>
-            
-            <div class="interests-list">
-                <div class="interest-item">
-                    <h3 class="interest-title">Computer Vision</h3>
-                    <ul class="interest-topics">
-                        <li>Image recognition</li>
-                        <li>Image generation</li>
-                        <li>Video captioning</li>
-                    </ul>
+    <div class="main-container">
+        <!-- Profile Section -->
+        <div class="profile-container">
+            <div class="profile-content">
+                <div class="profile-header">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Maibam Rakesh Singh" class="profile-photo">
+                    <h1 class="profile-name">Maibam Rakesh Singh</h1>
+                    <div class="profile-title">Data Scientist & MLOps Engineer</div>
+                    <p class="profile-tagline">Statistical Mathematician specializing in Computer Vision, Meta-Learning, and End-to-End ML Solutions</p>
                 </div>
                 
-                <div class="interest-item">
-                    <h3 class="interest-title">Machine Learning</h3>
-                    <ul class="interest-topics">
-                        <li>Meta-learning</li>
-                        <li>Incremental learning</li>
-                        <li>Transfer learning</li>
-                    </ul>
+                <div class="profile-details">
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <div><strong>Location</strong></div>
+                            <div>Available for Remote & On-site Projects</div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <div><strong>Education</strong></div>
+                            <div>M.S. in Data Science & Statistics</div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div>
+                            <div><strong>Experience</strong></div>
+                            <div>5+ Years in ML & Data Science</div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div>
+                            <div><strong>Specialization</strong></div>
+                            <div>MLOps, Computer Vision, Statistical Analysis</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Portfolio & Projects Section -->
-        <div class="section-box portfolio-box">
-            <div class="section-header">
-                <div class="section-icon">
-                    <i class="fas fa-project-diagram"></i>
-                </div>
-                <h2 class="section-title">Portfolio & Projects</h2>
-            </div>
-            
-            <!-- Project 1 -->
-            <div class="portfolio-item">
-                <h3 class="portfolio-title">Mnemonics Training: Multi-Class Incremental Learning without Forgetting</h3>
-                <div class="portfolio-authors">
-                    <strong>Yaoyao Liu</strong>, Yuting Su, An-An Liu, Bernt Schiele, Qianru Sun
-                </div>
-                <div class="portfolio-conference">IEEE Conference on Computer Vision and Pattern Recognition. CVPR 2020.</div>
                 
-                <div class="action-links">
-                    <a href="https://arxiv.org/pdf/2002.10211.pdf" class="action-link" target="_blank">
-                        <i class="fas fa-file-pdf"></i> PDF
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/yourprofile" class="social-link" target="_blank">
+                        <div class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <span class="social-label">LinkedIn</span>
                     </a>
-                    <a href="https://github.com/yaoyao-liu/mnemonics" class="action-link" target="_blank">
-                        <i class="fab fa-github"></i> Code
+                    
+                    <a href="https://github.com/yourusername" class="social-link" target="_blank">
+                        <div class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <span class="social-label">GitHub</span>
                     </a>
-                    <a href="https://mnemonics.yyliu.net/" class="action-link" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> Project
+                    
+                    <a href="your-cv.pdf" class="social-link" target="_blank">
+                        <div class="social-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <span class="social-label">CV/Resume</span>
                     </a>
-                    <span class="oral-badge">Oral Presentation</span>
                 </div>
-            </div>
-            
-            <!-- Project 2 -->
-            <div class="portfolio-item">
-                <h3 class="portfolio-title">Learning to Self-Train for Semi-Supervised Few-Shot Classification</h3>
-                <div class="portfolio-authors">
-                    Xinzhe Li, Qianru Sun, <strong>Yaoyao Liu</strong>, Shibao Zheng, Qin Zhou, Tat-Seng Chua, Bernt Schiele
-                </div>
-                <div class="portfolio-conference">33rd Conference on Neural Information Processing Systems. NeurIPS 2019.</div>
                 
-                <div class="action-links">
-                    <a href="http://papers.nips.cc/paper/9216-learning-to-self-train-for-semi-supervised-few-shot-classification.pdf" class="action-link" target="_blank">
-                        <i class="fas fa-file-pdf"></i> PDF
-                    </a>
-                    <a href="https://github.com/xinzheli1217/learning-to-self-train" class="action-link" target="_blank">
-                        <i class="fab fa-github"></i> Code
-                    </a>
-                    <a href="https://people.mpi-inf.mpg.de/~yaliu/files/learning-to-self-train-poster.pdf" class="action-link" target="_blank">
-                        <i class="fas fa-image"></i> Poster
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Project 3 -->
-            <div class="portfolio-item">
-                <h3 class="portfolio-title">Meta-Transfer Learning for Few-Shot Learning</h3>
-                <div class="portfolio-authors">
-                    Qianru Sun*, <strong>Yaoyao Liu*</strong>, Tat-Seng Chua, Bernt Schiele
-                </div>
-                <div class="portfolio-conference">IEEE Conference on Computer Vision and Pattern Recognition. CVPR 2019.</div>
-                
-                <div class="action-links">
-                    <a href="http://openaccess.thecvf.com/content_CVPR_2019/papers/Sun_Meta-Transfer_Learning_for_Few-Shot_Learning_CVPR_2019_paper.pdf" class="action-link" target="_blank">
-                        <i class="fas fa-file-pdf"></i> PDF
-                    </a>
-                    <a href="https://github.com/yaoyao-liu/meta-transfer-learning" class="action-link" target="_blank">
-                        <i class="fab fa-github"></i> Code
-                    </a>
-                    <a href="https://mtl.yyliu.net/" class="action-link" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> Project
-                    </a>
-                    <a href="https://people.mpi-inf.mpg.de/~yaliu/files/meta-transfer-learning-poster.pdf" class="action-link" target="_blank">
-                        <i class="fas fa-image"></i> Poster
-                    </a>
-                </div>
+                <a href="your-cv.pdf" class="cv-button" target="_blank">
+                    <i class="fas fa-download"></i> Download Full CV
+                </a>
             </div>
         </div>
 
-        <!-- Expertise & Services Section -->
-        <div class="section-box expertise-box">
-            <div class="section-header">
-                <div class="section-icon">
-                    <i class="fas fa-cogs"></i>
-                </div>
-                <h2 class="section-title">Expertise & Services</h2>
-            </div>
-            
-            <div class="expertise-grid">
-                <div class="expertise-category">
-                    <h3>Data Science & Statistical Consulting</h3>
-                    <ul class="expertise-list">
-                        <li>Advanced statistical analysis and hypothesis testing</li>
-                        <li>Predictive modeling and machine learning solutions</li>
-                        <li>Experimental design and A/B testing frameworks</li>
-                        <li>Data visualization and dashboard development</li>
-                        <li>Statistical inference and Bayesian methods</li>
-                    </ul>
+        <!-- Content Sections -->
+        <div>
+            <!-- Research Interests Section -->
+            <div class="container section-box research-box">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h2 class="section-title">Research Interests</h2>
                 </div>
                 
-                <div class="expertise-category">
-                    <h3>MLOps & DevOps Engineering</h3>
-                    <ul class="expertise-list">
-                        <li>End-to-end ML pipeline design and implementation</li>
-                        <li>Model deployment and serving infrastructure</li>
-                        <li>CI/CD automation for machine learning</li>
-                        <li>Cloud infrastructure and container orchestration</li>
-                        <li>Model monitoring and performance optimization</li>
-                    </ul>
-                </div>
-                
-                <div class="expertise-category">
-                    <h3>Mathematical Solutions Architecture</h3>
-                    <ul class="expertise-list">
-                        <li>Algorithm design and mathematical optimization</li>
-                        <li>Stochastic modeling and simulation</li>
-                        <li>Numerical methods implementation</li>
-                        <li>Statistical methodology development</li>
-                        <li>Research collaboration and academic consulting</li>
-                    </ul>
+                <div class="interests-list">
+                    <div class="interest-item">
+                        <h3 class="interest-title">Computer Vision</h3>
+                        <ul class="interest-topics">
+                            <li>Image recognition</li>
+                            <li>Image generation</li>
+                            <li>Video captioning</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="interest-item">
+                        <h3 class="interest-title">Machine Learning</h3>
+                        <ul class="interest-topics">
+                            <li>Meta-learning</li>
+                            <li>Incremental learning</li>
+                            <li>Transfer learning</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Contact Section -->
-        <div class="section-box contact-box">
-            <div class="section-header">
-                <div class="section-icon">
-                    <i class="fas fa-envelope"></i>
+            <!-- Portfolio & Projects Section -->
+            <div class="container section-box portfolio-box">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h2 class="section-title">Portfolio & Projects</h2>
                 </div>
-                <h2 class="section-title">Contact Me</h2>
+                
+                <!-- Project 1 -->
+                <div class="portfolio-item">
+                    <h3 class="portfolio-title">Mnemonics Training: Multi-Class Incremental Learning without Forgetting</h3>
+                    <div class="portfolio-authors">
+                        <strong>Yaoyao Liu</strong>, Yuting Su, An-An Liu, Bernt Schiele, Qianru Sun
+                    </div>
+                    <div class="portfolio-conference">IEEE Conference on Computer Vision and Pattern Recognition. CVPR 2020.</div>
+                    
+                    <div class="action-links">
+                        <a href="https://arxiv.org/pdf/2002.10211.pdf" class="action-link" target="_blank">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </a>
+                        <a href="https://github.com/yaoyao-liu/mnemonics" class="action-link" target="_blank">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                        <a href="https://mnemonics.yyliu.net/" class="action-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Project
+                        </a>
+                        <span class="oral-badge">Oral Presentation</span>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="portfolio-item">
+                    <h3 class="portfolio-title">Learning to Self-Train for Semi-Supervised Few-Shot Classification</h3>
+                    <div class="portfolio-authors">
+                        Xinzhe Li, Qianru Sun, <strong>Yaoyao Liu</strong>, Shibao Zheng, Qin Zhou, Tat-Seng Chua, Bernt Schiele
+                    </div>
+                    <div class="portfolio-conference">33rd Conference on Neural Information Processing Systems. NeurIPS 2019.</div>
+                    
+                    <div class="action-links">
+                        <a href="http://papers.nips.cc/paper/9216-learning-to-self-train-for-semi-supervised-few-shot-classification.pdf" class="action-link" target="_blank">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </a>
+                        <a href="https://github.com/xinzheli1217/learning-to-self-train" class="action-link" target="_blank">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                        <a href="https://people.mpi-inf.mpg.de/~yaliu/files/learning-to-self-train-poster.pdf" class="action-link" target="_blank">
+                            <i class="fas fa-image"></i> Poster
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="portfolio-item">
+                    <h3 class="portfolio-title">Meta-Transfer Learning for Few-Shot Learning</h3>
+                    <div class="portfolio-authors">
+                        Qianru Sun*, <strong>Yaoyao Liu*</strong>, Tat-Seng Chua, Bernt Schiele
+                    </div>
+                    <div class="portfolio-conference">IEEE Conference on Computer Vision and Pattern Recognition. CVPR 2019.</div>
+                    
+                    <div class="action-links">
+                        <a href="http://openaccess.thecvf.com/content_CVPR_2019/papers/Sun_Meta-Transfer_Learning_for_Few-Shot_Learning_CVPR_2019_paper.pdf" class="action-link" target="_blank">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </a>
+                        <a href="https://github.com/yaoyao-liu/meta-transfer-learning" class="action-link" target="_blank">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                        <a href="https://mtl.yyliu.net/" class="action-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Project
+                        </a>
+                        <a href="https://people.mpi-inf.mpg.de/~yaliu/files/meta-transfer-learning-poster.pdf" class="action-link" target="_blank">
+                            <i class="fas fa-image"></i> Poster
+                        </a>
+                    </div>
+                </div>
             </div>
-            
-            <!-- Contact Form -->
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <label class="form-label" for="name">Name</label>
-                    <input type="text" id="name" class="form-input" placeholder="Your name">
+
+            <!-- Expertise & Services Section -->
+            <div class="container section-box expertise-box">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h2 class="section-title">Expertise & Services</h2>
                 </div>
                 
-                <div class="form-group">
-                    <label class="form-label" for="email">Email Address</label>
-                    <input type="email" id="email" class="form-input" placeholder="Your email address">
+                <div class="expertise-grid">
+                    <div class="expertise-category">
+                        <h3>Data Science & Statistical Consulting</h3>
+                        <ul class="expertise-list">
+                            <li>Advanced statistical analysis and hypothesis testing</li>
+                            <li>Predictive modeling and machine learning solutions</li>
+                            <li>Experimental design and A/B testing frameworks</li>
+                            <li>Data visualization and dashboard development</li>
+                            <li>Statistical inference and Bayesian methods</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="expertise-category">
+                        <h3>MLOps & DevOps Engineering</h3>
+                        <ul class="expertise-list">
+                            <li>End-to-end ML pipeline design and implementation</li>
+                            <li>Model deployment and serving infrastructure</li>
+                            <li>CI/CD automation for machine learning</li>
+                            <li>Cloud infrastructure and container orchestration</li>
+                            <li>Model monitoring and performance optimization</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="expertise-category">
+                        <h3>Mathematical Solutions Architecture</h3>
+                        <ul class="expertise-list">
+                            <li>Algorithm design and mathematical optimization</li>
+                            <li>Stochastic modeling and simulation</li>
+                            <li>Numerical methods implementation</li>
+                            <li>Statistical methodology development</li>
+                            <li>Research collaboration and academic consulting</li>
+                        </ul>
+                    </div>
                 </div>
-                
-                <div class="form-group full-width">
-                    <label class="form-label" for="message">Message</label>
-                    <textarea id="message" class="form-input" placeholder="Your message"></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-            
-            <!-- Alternative Contact Methods -->
-            <div class="contact-alternatives">
-                <div class="contact-method">
-                    <div class="contact-icon">
+            </div>
+
+            <!-- Contact Section -->
+            <div class="container section-box contact-box">
+                <div class="section-header">
+                    <div class="section-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
-                    <h3>Email</h3>
-                    <p>maibamrakeshsingh31@gmail.com</p>
-                    <p><small>For formal inquiries and collaborations</small></p>
+                    <h2 class="section-title">Contact Me</h2>
                 </div>
                 
-                <div class="contact-method">
-                    <div class="contact-icon">
-                        <i class="fas fa-comment-dots"></i>
+                <!-- Contact Form -->
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Name</label>
+                        <input type="text" id="name" class="form-input" placeholder="Your name">
                     </div>
-                    <h3>Quick Messaging</h3>
-                    <p>Prefer instant messaging? Connect with me directly via:</p>
                     
-                    <div class="social-icons">
-                        <a href="#" class="social-icon whatsapp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="#" class="social-icon discord">
-                            <i class="fab fa-discord"></i>
-                        </a>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <input type="email" id="email" class="form-input" placeholder="Your email address">
                     </div>
-                </div>
+                    
+                    <div class="form-group full-width">
+                        <label class="form-label" for="message">Message</label>
+                        <textarea id="message" class="form-input" placeholder="Your message"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
                 
-                <div class="contact-method">
-                    <div class="contact-icon">
-                        <i class="fas fa-clock"></i>
+                <!-- Alternative Contact Methods -->
+                <div class="contact-alternatives">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>maibamrakeshsingh31@gmail.com</p>
+                        <p><small>For formal inquiries and collaborations</small></p>
                     </div>
-                    <h3>Response Time</h3>
-                    <p>Typically respond within 24-48 hours</p>
-                    <p><strong>Available for freelance projects and research collaborations.</strong></p>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-comment-dots"></i>
+                        </div>
+                        <h3>Quick Messaging</h3>
+                        <p>Prefer instant messaging? Connect with me directly via:</p>
+                        
+                        <div class="social-icons" style="justify-content: center; margin-top: 15px; gap: 15px;">
+                            <a href="#" class="social-icon whatsapp" style="background-color: #25D366; color: white;">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="social-icon discord" style="background-color: #7289DA; color: white;">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Response Time</h3>
+                        <p>Typically respond within 24-48 hours</p>
+                        <p><strong>Available for freelance projects and research collaborations.</strong></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -652,15 +874,23 @@
             }
         });
 
-        // WhatsApp and Discord links - replace with your actual links
+        // Update social links with your actual links
         document.querySelector('.whatsapp').addEventListener('click', function(e) {
+            e.preventDefault();
             // Replace with your WhatsApp link
             window.open('https://wa.me/yourphonenumber', '_blank');
         });
 
         document.querySelector('.discord').addEventListener('click', function(e) {
+            e.preventDefault();
             // Replace with your Discord link
             window.open('https://discord.com/users/yourdiscordid', '_blank');
+        });
+
+        // Update LinkedIn link
+        document.querySelector('.social-link:nth-child(1)').addEventListener('click', function(e) {
+            // This will open the LinkedIn link already set in href
+            // Add additional handling if needed
         });
 
         // Smooth scroll animation for section boxes
@@ -673,5 +903,3 @@
     </script>
 </body>
 </html>
-
-
