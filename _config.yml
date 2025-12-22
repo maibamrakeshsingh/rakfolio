@@ -1,11 +1,10 @@
-title: "Maibam Rakesh Singh"
-position: "MLOps Engineer"
-affiliation: "Statistical Mathematician"
-location: "Tiruchirappalli, India"
-
-#email: yourname (at) example.edu
+# Jekyll 站点配置
+title: Maibam Rakesh Singh
+position: MLOps Enginner &
+affiliation: Statistical Mathematician | Bharathidasan University (Trichy | Imphal | India)
+email: yourname (at) example.edu
 keywords: minimal academic
-#google_scholar: https://scholar.google.com/
+# google_scholar: https://scholar.google.com/  # 此行被注释，如需使用请取消注释
 github_link: https://github.com/yaoyao-liu/strata-academic
 linkedin: https://www.linkedin.com/
 cv_link: ./
@@ -13,6 +12,6 @@ avatar: ./assets/img/rake.png
 google_analytics: UA-111540567-4
 favicon: ./assets/img/favicon.png
 favicon_dark: ./assets/img/favicon-dark.png
-description: "The Strata Academic is a simple and elegant jekyll theme for academic personal homepage."
+description: The Strata Academic is a simple and elegant jekyll theme for academic personal homepage.
 canonical: https://strata-academic.yyliu.net/
 remote_theme: yaoyao-liu/strata-academic
