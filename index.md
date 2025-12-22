@@ -558,7 +558,7 @@
                     <img src="https://github.com/maibamrakeshsingh/rakfolio/blob/master/assets/img/rake.png" alt="Maibam Rakesh Singh" class="profile-photo">
                     <h1 class="profile-name">Maibam Rakesh Singh</h1>
                     <div class="profile-title">Data Scientist & MLOps Engineer</div>
-                    <p class="profile-tagline">Statistical Mathematician specializing in Computer Vision, Meta-Learning, and ML Solutions</p>
+                    <p class="profile-tagline">Statistical Mathematician specializing in Meta-Learning, and ML Solutions</p>
                 </div>
                 
                 <div class="profile-details">
@@ -568,7 +568,7 @@
                         </div>
                         <div>
                             <div><strong>Location</strong></div>
-                            <div>Available for Remote & On-site Projects</div>
+                            <div>Trichy | Imphal | India</div>
                         </div>
                     </div>
                     
@@ -578,7 +578,7 @@
                         </div>
                         <div>
                             <div><strong>Education</strong></div>
-                            <div>M.S. in Data Science & Statistics</div>
+                            <div>M.S. in Statistics</div>
                         </div>
                     </div>
                     
@@ -595,11 +595,7 @@
                     <div class="detail-item">
                         <div class="detail-icon">
                             <i class="fas fa-code"></i>
-                        </div>
-                        <div>
-                            <div><strong>Specialization</strong></div>
-                            <div>MLOps, Computer Vision, Statistical Analysis</div>
-                        </div>
+                        </di
                     </div>
                 </div>
                 
