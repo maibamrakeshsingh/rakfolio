@@ -555,10 +555,10 @@
         <div class="profile-container">
             <div class="profile-content">
                 <div class="profile-header">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Maibam Rakesh Singh" class="profile-photo">
+                    <img src="https://github.com/maibamrakeshsingh/rakfolio/blob/master/assets/img/rake.png" alt="Maibam Rakesh Singh" class="profile-photo">
                     <h1 class="profile-name">Maibam Rakesh Singh</h1>
                     <div class="profile-title">Data Scientist & MLOps Engineer</div>
-                    <p class="profile-tagline">Statistical Mathematician specializing in Computer Vision, Meta-Learning, and End-to-End ML Solutions</p>
+                    <p class="profile-tagline">Statistical Mathematician specializing in Computer Vision, Meta-Learning, and ML Solutions</p>
                 </div>
                 
                 <div class="profile-details">
@@ -622,7 +622,7 @@
                         <div class="social-icon">
                             <i class="fas fa-file-pdf"></i>
                         </div>
-                        <span class="social-label">CV/Resume</span>
+                        <span class="social-label">Resume</span>
                     </a>
                 </div>
                 
