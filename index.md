@@ -351,43 +351,74 @@
             margin-left: 10px;
         }
 
-        /* Expertise grid */
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+        /* Expertise Section - Horizontal Layout */
+        .expertise-horizontal {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
 
-        .expertise-category {
+        .expertise-row {
             background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            transition: var(--transition);
         }
 
-        .expertise-category h3 {
+        .expertise-row:hover {
+            transform: translateX(5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .expertise-icon {
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            background: linear-gradient(135deg, var(--secondary-color), #2980b9);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .expertise-content {
+            flex: 1;
+        }
+
+        .expertise-content h3 {
             color: var(--primary-color);
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f0f0f0;
         }
 
         .expertise-list {
             list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .expertise-list li {
-            padding: 8px 0;
-            border-bottom: 1px dotted #eee;
-            position: relative;
-            padding-left: 20px;
+            background-color: #f8f9fa;
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 1px solid #e0e0e0;
+            font-size: 0.95rem;
+            transition: var(--transition);
         }
 
-        .expertise-list li:before {
-            content: "▸";
-            color: var(--secondary-color);
-            position: absolute;
-            left: 0;
+        .expertise-list li:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            transform: translateY(-2px);
         }
 
         /* Contact form */
@@ -544,13 +575,23 @@
                 grid-column: span 1;
             }
             
-            .interests-list, .expertise-grid {
+            .interests-list {
                 grid-template-columns: 1fr;
             }
             
             .profile-photo {
                 width: 150px;
                 height: 150px;
+            }
+            
+            .expertise-row {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .expertise-list {
+                justify-content: center;
             }
         }
 
@@ -566,6 +607,17 @@
             .section-title {
                 font-size: 1.5rem;
             }
+            
+            .expertise-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .expertise-list li {
+                font-size: 0.85rem;
+                padding: 6px 12px;
+            }
         }
     </style>
 </head>
@@ -575,7 +627,11 @@
         <div class="profile-container">
             <div class="profile-content">
                 <div class="profile-header">
-                    <img src="assets/img/rake.png" alt="Maibam Rakesh Singh" class="profile-photo" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80'">
+                    <!-- Fixed GitHub raw image URL -->
+                    <img src="https://raw.githubusercontent.com/maibamrakeshsingh/rakfolio/master/assets/Ori%20Ppics.png" 
+                         alt="Maibam Rakesh Singh" 
+                         class="profile-photo" 
+                         onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80'">
                     <h1 class="profile-name">Maibam Rakesh Singh</h1>
                     <div class="profile-title">MLOps Engineer & Statistical Mathematician</div>
                     <p class="profile-tagline">Statistical Mathematician specializing in Stochasticity and Probability</p>
@@ -753,7 +809,7 @@
                 </div>
             </div>
 
-            <!-- Expertise & Services Section -->
+            <!-- Expertise & Services Section - Horizontal Layout -->
             <div class="container section-box expertise-box">
                 <div class="section-header">
                     <div class="section-icon">
@@ -762,38 +818,59 @@
                     <h2 class="section-title">Expertise & Services</h2>
                 </div>
                 
-                <div class="expertise-grid">
-                    <div class="expertise-category">
-                        <h3>Data Science & Statistical Consulting</h3>
-                        <ul class="expertise-list">
-                            <li>Advanced statistical analysis and hypothesis testing</li>
-                            <li>Predictive modeling and machine learning solutions</li>
-                            <li>Experimental design and A/B testing frameworks</li>
-                            <li>Data visualization and dashboard development</li>
-                            <li>Statistical inference and Bayesian methods</li>
-                        </ul>
+                <div class="expertise-horizontal">
+                    <!-- Data Science Row -->
+                    <div class="expertise-row">
+                        <div class="expertise-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="expertise-content">
+                            <h3>Data Science & Statistical Consulting</h3>
+                            <ul class="expertise-list">
+                                <li>Advanced statistical analysis</li>
+                                <li>Predictive modeling</li>
+                                <li>Experimental design</li>
+                                <li>Data visualization</li>
+                                <li>Bayesian methods</li>
+                                <li>Hypothesis testing</li>
+                            </ul>
+                        </div>
                     </div>
                     
-                    <div class="expertise-category">
-                        <h3>MLOps & DevOps Engineering</h3>
-                        <ul class="expertise-list">
-                            <li>End-to-end ML pipeline design and implementation</li>
-                            <li>Model deployment and serving infrastructure</li>
-                            <li>CI/CD automation for machine learning</li>
-                            <li>Cloud infrastructure and container orchestration</li>
-                            <li>Model monitoring and performance optimization</li>
-                        </ul>
+                    <!-- MLOps Row -->
+                    <div class="expertise-row">
+                        <div class="expertise-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="expertise-content">
+                            <h3>MLOps & DevOps Engineering</h3>
+                            <ul class="expertise-list">
+                                <li>ML pipeline design</li>
+                                <li>Model deployment</li>
+                                <li>CI/CD automation</li>
+                                <li>Cloud infrastructure</li>
+                                <li>Container orchestration</li>
+                                <li>Model monitoring</li>
+                            </ul>
+                        </div>
                     </div>
                     
-                    <div class="expertise-category">
-                        <h3>Mathematical Solutions Architecture</h3>
-                        <ul class="expertise-list">
-                            <li>Algorithm design and mathematical optimization</li>
-                            <li>Stochastic modeling and simulation</li>
-                            <li>Numerical methods implementation</li>
-                            <li>Statistical methodology development</li>
-                            <li>Research collaboration and academic consulting</li>
-                        </ul>
+                    <!-- Mathematical Solutions Row -->
+                    <div class="expertise-row">
+                        <div class="expertise-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="expertise-content">
+                            <h3>Mathematical Solutions Architecture</h3>
+                            <ul class="expertise-list">
+                                <li>Algorithm design</li>
+                                <li>Stochastic modeling</li>
+                                <li>Numerical methods</li>
+                                <li>Statistical methodology</li>
+                                <li>Research collaboration</li>
+                                <li>Academic consulting</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -909,7 +986,6 @@
             
             const form = this;
             const submitBtn = form.querySelector('.submit-btn');
-            const formData = new FormData(form);
             
             // Get form values
             const name = document.getElementById('name').value;
@@ -926,7 +1002,7 @@
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
             
-            // Simulate form submission (replace with actual backend integration)
+            // Simulate form submission
             setTimeout(() => {
                 alert(`Thank you, ${name}! Your message has been received.\n\nIn a real implementation, this would connect to a backend service.`);
                 form.reset();
