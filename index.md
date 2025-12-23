@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -39,12 +38,18 @@
             gap: 30px;
         }
 
+        @media (max-width: 900px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .container {
             background-color: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            padding: 40px;
-            margin-top: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
         }
 
         /* Profile Section */
@@ -53,7 +58,6 @@
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             padding: 30px 25px;
-            margin-top: 20px;
             color: white;
             height: fit-content;
             position: sticky;
@@ -182,7 +186,7 @@
             border-color: rgba(255, 255, 255, 0.5);
         }
 
-        /* Section boxes with colored backgrounds */
+        /* Section boxes */
         .section-box {
             background-color: var(--light-bg);
             border-radius: var(--border-radius);
@@ -198,7 +202,6 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
         }
 
-        /* Different colors for different sections */
         .research-box {
             border-left-color: #3498db;
             background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
@@ -486,60 +489,43 @@
             font-size: 0.95rem;
         }
 
-        /* GitHub specific styling */
-        .github-stats {
+        /* Quick messaging icons */
+        .quick-messaging-icons {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             margin-top: 15px;
-            flex-wrap: wrap;
         }
 
-        .github-stat {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 10px 15px;
-            border-radius: 6px;
-            text-align: center;
-            min-width: 80px;
-        }
-
-        .github-stat .count {
+        .quick-message-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 1.5rem;
-            font-weight: bold;
-            display: block;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
         }
 
-        .github-stat .label {
-            font-size: 0.8rem;
-            opacity: 0.9;
+        .quick-message-icon:hover {
+            transform: translateY(-5px);
+        }
+
+        .whatsapp-icon {
+            background-color: #25D366;
+        }
+
+        .discord-icon {
+            background-color: #7289DA;
         }
 
         /* Responsive design */
-        @media (max-width: 1024px) {
-            .main-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .profile-container {
-                position: static;
-                margin-bottom: 30px;
-            }
-            
-            .profile-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .profile-details {
-                width: 100%;
-                max-width: 500px;
-            }
-        }
-
         @media (max-width: 768px) {
             .container, .profile-container {
-                padding: 25px;
+                padding: 20px;
             }
             
             .section-box {
@@ -566,18 +552,19 @@
                 width: 150px;
                 height: 150px;
             }
-            
-            .social-links {
-                gap: 10px;
-            }
-            
+        }
+
+        @media (max-width: 480px) {
             .social-link {
                 width: 70px;
             }
             
-            .github-stats {
-                flex-direction: column;
-                align-items: center;
+            .profile-name {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -588,27 +575,10 @@
         <div class="profile-container">
             <div class="profile-content">
                 <div class="profile-header">
-                    <!-- GitHub repository image path -->
                     <img src="assets/img/rake.png" alt="Maibam Rakesh Singh" class="profile-photo" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80'">
                     <h1 class="profile-name">Maibam Rakesh Singh</h1>
                     <div class="profile-title">MLOps Engineer & Statistical Mathematician</div>
                     <p class="profile-tagline">Statistical Mathematician specializing in Stochasticity and Probability</p>
-                    
-                    <!-- GitHub Stats -->
-                    <div class="github-stats">
-                        <div class="github-stat">
-                            <span class="count" id="repo-count">0</span>
-                            <span class="label">Repos</span>
-                        </div>
-                        <div class="github-stat">
-                            <span class="count" id="star-count">0</span>
-                            <span class="label">Stars</span>
-                        </div>
-                        <div class="github-stat">
-                            <span class="count" id="follower-count">0</span>
-                            <span class="label">Followers</span>
-                        </div>
-                    </div>
                 </div>
                 
                 <div class="profile-details">
@@ -644,11 +614,11 @@
                     
                     <div class="detail-item">
                         <div class="detail-icon">
-                            <i class="fas fa-code"></i>
+                            <i class="fas fa-cogs"></i>
                         </div>
                         <div>
-                            <div><strong>Specialization</strong></div>
-                            <div>MLOps, Computer Vision, Statistical Analysis</div>
+                            <div><strong>Technologies</strong></div>
+                            <div>Python, ML, MLOps, Statistics</div>
                         </div>
                     </div>
                 </div>
@@ -668,11 +638,11 @@
                         <span class="social-label">GitHub</span>
                     </a>
                     
-                    <a href="assets/docs/resume.pdf" class="social-link" target="_blank">
+                    <a href="https://scholar.google.com" class="social-link" target="_blank">
                         <div class="social-icon">
-                            <i class="fas fa-file-pdf"></i>
+                            <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <span class="social-label">Resume</span>
+                        <span class="social-label">Scholar</span>
                     </a>
                 </div>
                 
@@ -695,20 +665,22 @@
                 
                 <div class="interests-list">
                     <div class="interest-item">
-                        <h3 class="interest-title">Computer Vision</h3>
+                        <h3 class="interest-title">Statistical Mathematical Models</h3>
                         <ul class="interest-topics">
-                            <li>Image recognition</li>
-                            <li>Image generation</li>
-                            <li>Video captioning</li>
+                            <li>Stochastic modeling</li>
+                            <li>Probability theory</li>
+                            <li>Statistical inference</li>
+                            <li>Bayesian methods</li>
                         </ul>
                     </div>
                     
                     <div class="interest-item">
-                        <h3 class="interest-title">Machine Learning</h3>
+                        <h3 class="interest-title">Machine Learning & MLOps</h3>
                         <ul class="interest-topics">
                             <li>Meta-learning</li>
                             <li>Incremental learning</li>
                             <li>Transfer learning</li>
+                            <li>ML pipeline automation</li>
                         </ul>
                     </div>
                 </div>
@@ -761,30 +733,6 @@
                             <i class="fab fa-github"></i> Code
                         </a>
                         <a href="https://people.mpi-inf.mpg.de/~yaliu/files/learning-to-self-train-poster.pdf" class="action-link" target="_blank">
-                            <i class="fas fa-image"></i> Poster
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="portfolio-item">
-                    <h3 class="portfolio-title">Meta-Transfer Learning for Few-Shot Learning</h3>
-                    <div class="portfolio-authors">
-                        Qianru Sun*, <strong>Yaoyao Liu*</strong>, Tat-Seng Chua, Bernt Schiele
-                    </div>
-                    <div class="portfolio-conference">IEEE Conference on Computer Vision and Pattern Recognition. CVPR 2019.</div>
-                    
-                    <div class="action-links">
-                        <a href="http://openaccess.thecvf.com/content_CVPR_2019/papers/Sun_Meta-Transfer_Learning_for_Few-Shot_Learning_CVPR_2019_paper.pdf" class="action-link" target="_blank">
-                            <i class="fas fa-file-pdf"></i> PDF
-                        </a>
-                        <a href="https://github.com/yaoyao-liu/meta-transfer-learning" class="action-link" target="_blank">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                        <a href="https://mtl.yyliu.net/" class="action-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Project
-                        </a>
-                        <a href="https://people.mpi-inf.mpg.de/~yaliu/files/meta-transfer-learning-poster.pdf" class="action-link" target="_blank">
                             <i class="fas fa-image"></i> Poster
                         </a>
                     </div>
@@ -859,8 +807,8 @@
                     <h2 class="section-title">Contact Me</h2>
                 </div>
                 
-                <!-- Contact Form (GitHub Pages compatible - uses Formspree) -->
-                <form class="contact-form" action="https://formspree.io/f/{your-form-id}" method="POST" id="contactForm">
+                <!-- Contact Form -->
+                <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <label class="form-label" for="name">Name</label>
                         <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
@@ -875,9 +823,6 @@
                         <label class="form-label" for="message">Message</label>
                         <textarea id="message" name="message" class="form-input" placeholder="Your message" required></textarea>
                     </div>
-                    
-                    <!-- Honeypot field for spam prevention -->
-                    <input type="text" name="_gotcha" style="display:none">
                     
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
@@ -898,13 +843,13 @@
                             <i class="fas fa-comment-dots"></i>
                         </div>
                         <h3>Quick Messaging</h3>
-                        <p>Prefer instant messaging? Connect with me directly via:</p>
+                        <p>Connect with me directly via:</p>
                         
-                        <div class="social-icons" style="justify-content: center; margin-top: 15px; gap: 15px;">
-                            <a href="https://wa.me/919897654321" class="social-icon whatsapp" style="background-color: #25D366; color: white;">
+                        <div class="quick-messaging-icons">
+                            <a href="https://wa.me/919897654321" class="quick-message-icon whatsapp-icon" target="_blank">
                                 <i class="fab fa-whatsapp"></i>
                             </a>
-                            <a href="https://discord.com/users/yourdiscordid" class="social-icon discord" style="background-color: #7289DA; color: white;">
+                            <a href="https://discord.com/users/yourdiscordid" class="quick-message-icon discord-icon" target="_blank">
                                 <i class="fab fa-discord"></i>
                             </a>
                         </div>
@@ -924,17 +869,9 @@
     </div>
 
     <script>
-        // GitHub API Integration
-        async function fetchGitHubStats() {
+        // GitHub API Integration for projects
+        async function fetchGitHubProjects() {
             try {
-                const response = await fetch('https://api.github.com/users/maibamrakeshsingh');
-                const data = await response.json();
-                
-                // Update GitHub stats
-                document.getElementById('repo-count').textContent = data.public_repos || '0';
-                document.getElementById('star-count').textContent = '0'; // Need separate API call for stars
-                document.getElementById('follower-count').textContent = data.followers || '0';
-                
                 // Fetch repositories
                 const reposResponse = await fetch('https://api.github.com/users/maibamrakeshsingh/repos?sort=updated&per_page=5');
                 const repos = await reposResponse.json();
@@ -942,6 +879,11 @@
                 // Display top repositories
                 const projectsContainer = document.getElementById('github-projects');
                 projectsContainer.innerHTML = '';
+                
+                if (repos.length === 0) {
+                    projectsContainer.innerHTML = '<p>No public repositories found.</p>';
+                    return;
+                }
                 
                 repos.forEach(repo => {
                     if (!repo.fork) {
@@ -956,62 +898,46 @@
                 
             } catch (error) {
                 console.error('Error fetching GitHub data:', error);
-                // Set default values
-                document.getElementById('repo-count').textContent = '10+';
-                document.getElementById('star-count').textContent = '5+';
-                document.getElementById('follower-count').textContent = '20+';
+                const projectsContainer = document.getElementById('github-projects');
+                projectsContainer.innerHTML = '<p><a href="https://github.com/maibamrakeshsingh" class="action-link" target="_blank"><i class="fab fa-github"></i> View GitHub Profile</a></p>';
             }
         }
 
-        // Form submission handler for Formspree
+        // Simple form submission handler
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const form = this;
-            const formData = new FormData(form);
             const submitBtn = form.querySelector('.submit-btn');
+            const formData = new FormData(form);
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Simple validation
+            if (!name || !email || !message) {
+                alert('Please fill in all fields.');
+                return;
+            }
             
             // Disable submit button
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
             
-            // Send form data to Formspree
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert('Thank you! Your message has been sent successfully.');
-                    form.reset();
-                } else {
-                    alert('Oops! There was a problem sending your message. Please try again.');
-                }
-            })
-            .catch(error => {
-                alert('Oops! There was a problem sending your message. Please try again.');
-            })
-            .finally(() => {
-                // Re-enable submit button
+            // Simulate form submission (replace with actual backend integration)
+            setTimeout(() => {
+                alert(`Thank you, ${name}! Your message has been received.\n\nIn a real implementation, this would connect to a backend service.`);
+                form.reset();
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Send Message';
-            });
-        });
-
-        // Smooth scroll animation for section boxes
-        const sectionBoxes = document.querySelectorAll('.section-box');
-        sectionBoxes.forEach(box => {
-            box.addEventListener('mouseenter', function() {
-                this.style.transition = 'all 0.3s ease';
-            });
+            }, 1000);
         });
 
         // Initialize when page loads
         document.addEventListener('DOMContentLoaded', function() {
-            fetchGitHubStats();
+            fetchGitHubProjects();
         });
     </script>
 </body>
