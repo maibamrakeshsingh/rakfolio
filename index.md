@@ -591,8 +591,8 @@
                     <!-- GitHub repository image path -->
                     <img src="assets/img/rake.png" alt="Maibam Rakesh Singh" class="profile-photo" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80'">
                     <h1 class="profile-name">Maibam Rakesh Singh</h1>
-                    <div class="profile-title">Data Scientist & MLOps Engineer</div>
-                    <p class="profile-tagline">Statistical Mathematician specializing in Meta-Learning, and ML Solutions</p>
+                    <div class="profile-title">MLOps Engineer & Statistical Mathematician</div>
+                    <p class="profile-tagline">Statistical Mathematician specializing in Stochasticity and Probability</p>
                     
                     <!-- GitHub Stats -->
                     <div class="github-stats">
