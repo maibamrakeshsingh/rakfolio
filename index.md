@@ -977,12 +977,11 @@
                         <div class="expertise-content">
                             <h3>Mathematical Solutions Architecture</h3>
                             <ul class="expertise-list">
-                                <li>Algorithm design</li>
+                                <li>Mathematical Statistical Physics</li>
                                 <li>Stochastic modeling</li>
                                 <li>Numerical methods</li>
                                 <li>Statistical methodology</li>
                                 <li>Research collaboration</li>
-                                <li>Academic consulting</li>
                             </ul>
                         </div>
                     </div>
