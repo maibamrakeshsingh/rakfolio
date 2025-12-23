@@ -980,6 +980,7 @@
                                 <li>Mathematical Statistical Physics</li>
                                 <li>Stochastic modeling</li>
                                 <li>Numerical methods</li>
+                                <li>Stochastic Geometry</li>
                                 <li>Statistical methodology</li>
                                 <li>Research collaboration</li>
                             </ul>
