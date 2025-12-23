@@ -426,6 +426,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
+            margin-bottom: 30px;
         }
 
         .form-group {
@@ -480,12 +481,90 @@
             transform: translateY(-2px);
         }
 
+        /* Response Time Horizontal Box */
+        .response-time-box {
+            background: linear-gradient(135deg, #ffecb3 0%, #ffd54f 100%);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-top: 30px;
+            border-left: 6px solid #f57c00;
+            transition: var(--transition);
+        }
+
+        .response-time-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .response-icon {
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+            background: linear-gradient(135deg, #f57c00, #ff9800);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.2rem;
+            box-shadow: 0 4px 10px rgba(245, 124, 0, 0.3);
+        }
+
+        .response-content {
+            flex: 1;
+        }
+
+        .response-content h3 {
+            color: #5d4037;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .response-stats {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .response-stat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .response-stat .value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #e65100;
+            line-height: 1;
+        }
+
+        .response-stat .label {
+            font-size: 0.95rem;
+            color: #5d4037;
+            margin-top: 5px;
+        }
+
+        .response-tagline {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 12px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #4caf50;
+            font-weight: 600;
+            color: #2e7d32;
+            margin-top: 15px;
+        }
+
         /* Contact alternatives */
         .contact-alternatives {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            margin-top: 30px;
         }
 
         .contact-method {
@@ -593,6 +672,23 @@
             .expertise-list {
                 justify-content: center;
             }
+            
+            .response-time-box {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+                padding: 25px;
+            }
+            
+            .response-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
+            
+            .response-stats {
+                justify-content: center;
+            }
         }
 
         @media (max-width: 480px) {
@@ -617,6 +713,24 @@
             .expertise-list li {
                 font-size: 0.85rem;
                 padding: 6px 12px;
+            }
+            
+            .response-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+            }
+            
+            .response-content h3 {
+                font-size: 1.4rem;
+            }
+            
+            .response-stat .value {
+                font-size: 1.5rem;
+            }
+            
+            .response-stats {
+                gap: 20px;
             }
         }
     </style>
@@ -904,6 +1018,33 @@
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
                 
+                <!-- Response Time Horizontal Box -->
+                <div class="response-time-box">
+                    <div class="response-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="response-content">
+                        <h3>Response Time & Availability</h3>
+                        <div class="response-stats">
+                            <div class="response-stat">
+                                <span class="value">24-48</span>
+                                <span class="label">Hours Response</span>
+                            </div>
+                            <div class="response-stat">
+                                <span class="value">5+</span>
+                                <span class="label">Years Experience</span>
+                            </div>
+                            <div class="response-stat">
+                                <span class="value">100%</span>
+                                <span class="label">Project Success</span>
+                            </div>
+                        </div>
+                        <div class="response-tagline">
+                            Available for freelance projects, research collaborations, and consulting engagements
+                        </div>
+                    </div>
+                </div>
+                
                 <!-- Alternative Contact Methods -->
                 <div class="contact-alternatives">
                     <div class="contact-method">
@@ -930,15 +1071,6 @@
                                 <i class="fab fa-discord"></i>
                             </a>
                         </div>
-                    </div>
-                    
-                    <div class="contact-method">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h3>Response Time</h3>
-                        <p>Typically respond within 24-48 hours</p>
-                        <p><strong>Available for freelance projects and research collaborations.</strong></p>
                     </div>
                 </div>
             </div>
