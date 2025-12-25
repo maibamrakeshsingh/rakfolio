@@ -979,8 +979,9 @@
                             <ul class="expertise-list">
                                 <li>Mathematical Statistical Physics</li>
                                 <li>Stochastic modeling</li>
+                                <li>Probability theory</li>
                                 <li>Numerical methods</li>
-                                <li>Stochastic Geometry</li>
+                                <li>Stochastic geometry</li>
                                 <li>Statistical methodology</li>
                                 <li>Research collaboration</li>
                             </ul>
